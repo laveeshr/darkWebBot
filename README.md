@@ -30,5 +30,5 @@ Polipo dependencies -
 
 
 To run - 
-cd testPolipo/
-scrapy crawl darkWebBot -o items.json -t json
+- cd testPolipo/
+- scrapy crawl darkWebBot -o items.json -t json
