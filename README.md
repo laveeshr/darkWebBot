@@ -20,6 +20,7 @@ Solr dependencies -
 - mv solrconfig.xml solrconfig_backup.xml
 - cp darkWebBot/managed-schema .
 - cp darkWebBot/solrconfig.xml .
+- cp darkWebBot/stopwords_en.txt .
 - restart solr
 
 Polipo dependencies - 
