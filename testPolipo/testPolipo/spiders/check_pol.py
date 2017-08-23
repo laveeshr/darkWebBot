@@ -11,7 +11,7 @@ from testPolipo.items import CrawledWebsiteItem
 
 class CheckPolSpider(CrawlSpider):
 
-    name = 'check_pol'
+    name = 'darkWebBot'
 
     allowed_domains = ["onion"]
     start_urls = [
