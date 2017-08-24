@@ -12,9 +12,8 @@ from urlparse import urlparse
 import pysolr
 from scrapy.conf import settings
 
-class TestpolipoPipeline(object):
+class DarkwebcrawlerPipeline(object):
     def process_item(self, item, spider):
-
         index = hashlib.sha256(item['url']).hexdigest()
         item['id'] = 'ahmia.websiteindex.' + str(index)
         item['django_ct'] = 'ahmia.websiteindex'

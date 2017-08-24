@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for testPolipo project
+# Scrapy settings for darkWebCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -11,17 +11,17 @@
 
 import random, requests
 
-BOT_NAME = 'testPolipo'
+BOT_NAME = 'darkWebCrawler'
 
-SPIDER_MODULES = ['testPolipo.spiders']
-NEWSPIDER_MODULE = 'testPolipo.spiders'
+SPIDER_MODULES = ['darkWebCrawler.spiders']
+NEWSPIDER_MODULE = 'darkWebCrawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'testPolipo (+http://www.yourdomain.com)'
+#USER_AGENT = 'darkWebCrawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -42,7 +42,7 @@ for md5 in response.text.split("\n"):
     if len(md5) is 32:
         BANNED_DOMAINS.append(md5)
 
-SOLR_CONNECTION = "http://localhost:8983/solr/test/" # Connection to Solr
+SOLR_CONNECTION = "http://localhost:8983/solr/darkweb/" # Connection to Solr
 
 HTTP_PROXY = 'http://localhost:8123'
 
@@ -52,8 +52,8 @@ USER_AGENT_LIST = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10'
 ]
 DOWNLOADER_MIDDLEWARES = {
-         'testPolipo.middlewares.RandomUserAgentMiddleware': 400,
-         'testPolipo.middlewares.ProxyMiddleware': 410,
+         'darkWebCrawler.middlewares.RandomUserAgentMiddleware': 400,
+         'darkWebCrawler.middlewares.ProxyMiddleware': 410,
          'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
     # Disable compression middleware, so the actual HTML pages are cached
 }
@@ -73,13 +73,13 @@ DOWNLOADER_MIDDLEWARES = {
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'testPolipo.middlewares.MyCustomSpiderMiddleware': 543,
+#    'darkWebCrawler.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'testPolipo.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'darkWebCrawler.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -91,7 +91,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'testPolipo.pipelines.TestpolipoPipeline': 1,
+   'darkWebCrawler.pipelines.DarkwebcrawlerPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

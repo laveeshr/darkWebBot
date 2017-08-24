@@ -6,16 +6,16 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.selector import HtmlXPathSelector
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
-from testPolipo.items import CrawledWebsiteItem
+from darkWebCrawler.items import CrawledWebsiteItem
 
 
-class CheckPolSpider(CrawlSpider):
+class DarkWebSpider(CrawlSpider):
 
     name = 'darkWebBot'
 
     allowed_domains = ["onion"]
     start_urls = [
-        "http://skunksworkedp2cg.onion/sites.html"  # "https://ahmia.fi/address/" #"http://check.torproject.org/"
+        "https://ahmia.fi/address/"  # "https://ahmia.fi/address/" #"http://check.torproject.org/"
     ]
 
     rules = (
@@ -74,5 +74,3 @@ class CheckPolSpider(CrawlSpider):
             if len(word) > 0 and len(word) <= 45:
                 words.append(word)
         return words
-
-
