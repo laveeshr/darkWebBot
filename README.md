@@ -14,8 +14,8 @@ Before Proceeding -
 
 Solr dependencies - 
 - Create a new core
-- Make sure no data in core - http://localhost:8983/solr/core_name/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
-- cd solr_dir/server/solr/core_name/conf/
+- Make sure no data in core - http://localhost:8983/solr/{core_name}/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
+- cd {solr_dir}/server/solr/{core_name}/conf/
 - mv managed-schema schema_backup.xml
 - mv solrconfig.xml solrconfig_backup.xml
 - cp darkWebBot/managed-schema .
@@ -31,5 +31,6 @@ Polipo dependencies -
 
 
 To run - 
-- cd testPolipo/
+- tor (run tor in your machine)
+- cd darkWebCrawler/
 - scrapy crawl darkWebBot -o items.json -t json
